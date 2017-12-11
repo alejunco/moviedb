@@ -1,0 +1,37 @@
+<div class="container">
+  <br>
+  <ol class="breadcrumb">
+    <li>
+      <a ui-sref="home">Home</a>
+    </li>
+    <li>Results</li>
+  </ol>
+
+  <uib-accordion>
+    <uib-accordion-group ng-repeat="result in vm.results.Search" is-open="result.open">
+      <uib-accordion-heading>
+        {{result.Title}}
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down':result.open,'glyphicon-chevron-right':!result.open}"></i>
+      </uib-accordion-heading>
+      <div>
+        <div class="row">
+          <div class="col-sm-4">
+            <img ng-src="{{result.Poster}}" alt="{{result.Title}}" width="220">
+          </div>
+          <div class="col-sm-8">
+            <h3>{{result.Title}}</h3>
+            <p>{{result.Plot}}</p>
+            <p>
+              <strong>Director:</strong> {{result.Director}}</p>
+            <p>
+              <strong>Actors:</strong> {{result.Actors}}</p>
+            <p>
+              <strong>Released:</strong> {{result.Released}} ({{result.Released}})</p>
+            <p>
+              <strong>Genre:</strong> {{result.Genre}}</p>
+          </div>
+        </div>
+      </div>
+    </uib-accordion-group>
+  </uib-accordion>
+</div>
